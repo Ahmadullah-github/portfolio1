@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html {
+  scroll-behavior: smooth;
+}
+body {
+  @apply bg-black;
+  overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+#root, /* For React */
+#__next /* For Next.js */ {
+  @apply bg-black min-h-screen;
+}
+@layer utilities {
+    .bg-grid-pattern {
+      background-size: 50px 50px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    }
+  }
+  
+  /* Optional: Add this if you want smoother animations */
+  * {
+    @apply transition-colors duration-200;
+  }
+  
+  .animate-glow {
+    animation: glow 4s ease-in-out infinite alternate;
+  }
+  /* Hide scrollbar but maintain functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+  
+  @keyframes glow {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 0.8;
+    }
+  }
