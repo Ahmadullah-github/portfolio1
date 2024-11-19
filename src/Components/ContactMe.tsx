@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useState } from 'react';
 import Background from './Background';
 import { useForm } from 'react-hook-form';
@@ -33,7 +33,7 @@ const ContactMe = () => {
       setNotification({ message: "Message sent successfully!", type: "success" });
       reset(); // Reset form fields
     } catch (error) {
-      setNotification({ message: "Failed to send the message. Please try again.", type: "error" });
+      setNotification({ message: `Failed to send the message. Please try again. ${error}`, type: `error` });
     }
   };
 
@@ -228,12 +228,3 @@ const ContactMe = () => {
 };
 
 export default ContactMe;
-
-function useWeb3Forms(arg0: { access_key: any; settings: { from_name: string; subject: string; }; onSuccess: (msg: any, data: any) => void; onError: (msg: any, data: any) => void; }): { submit: any; } {
-  throw new Error('Function not implemented.');
-}
-
-
-function setIsSuccess(arg0: boolean) {
-  throw new Error('Function not implemented.');
-}
